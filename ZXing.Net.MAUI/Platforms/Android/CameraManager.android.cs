@@ -69,6 +69,7 @@ namespace ZXing.Net.Maui
                 imageAnalyzer = new ImageAnalysis
                     .Builder()
                     .SetResolutionSelector(resolutionSelector)
+                    .SetOutputImageFormat(ImageAnalysis.OutputImageFormatRgba8888)
                     .SetBackpressureStrategy(ImageAnalysis.StrategyKeepOnlyLatest)
                     .Build();
 
