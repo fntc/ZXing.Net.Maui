@@ -12,12 +12,12 @@
 		<Copyright>Copyright © Redth</Copyright>
 		<PackageProjectUrl>https://github.com/redth/ZXing.Net.Maui</PackageProjectUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<GitThisAssemblyMetadata>True</GitThisAssemblyMetadata>
-		<RepositoryUrl>$(GitRepositoryUrl)</RepositoryUrl>
-		<RepositoryCommit>$(GitCommit)</RepositoryCommit>
-		<RepositoryBranch>$(GitBranch)</RepositoryBranch>
-		<RepositoryType>git</RepositoryType>
-		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<!-- <GitThisAssemblyMetadata>True</GitThisAssemblyMetadata> -->
+		<!-- <RepositoryUrl>$(GitRepositoryUrl)</RepositoryUrl> -->
+		<!-- <RepositoryCommit>$(GitCommit)</RepositoryCommit> -->
+		<!-- <RepositoryBranch>$(GitBranch)</RepositoryBranch> -->
+		<!-- <RepositoryType>git</RepositoryType> -->
+		<!-- <PublishRepositoryUrl>true</PublishRepositoryUrl> -->
 		<AssemblyFileVersion>$(PackageVersion)</AssemblyFileVersion>
 		<DebugType>portable</DebugType>
 		<IsPackable>true</IsPackable>
@@ -29,7 +29,7 @@
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="ZXing.Net" Version="0.16.10" />
-		<PackageReference Include="GitInfo" Version="3.5.0" PrivateAssets="all" />
+		<!-- <PackageReference Include="GitInfo" Version="3.5.0" PrivateAssets="all" /> -->
 	</ItemGroup>
   
 	<ItemGroup>
