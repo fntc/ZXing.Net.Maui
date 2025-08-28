@@ -22,6 +22,7 @@ namespace ZXing.Net.Maui
 		AVCaptureVideoPreviewLayer videoPreviewLayer;
 		CaptureDelegate captureDelegate;
 		DispatchQueue dispatchQueue;
+        NSObject orientationObserver;
 		Dictionary<NSString, MSize> Resolutions => new()
 		{
 			{ AVCaptureSession.Preset352x288, new MSize(352, 288) },
@@ -42,9 +43,20 @@ namespace ZXing.Net.Maui
 			videoPreviewLayer = new AVCaptureVideoPreviewLayer(captureSession);
 			videoPreviewLayer.VideoGravity = AVLayerVideoGravity.ResizeAspectFill;
 
+            // Observe device orientation changes to reapply layout subview		
+			orientationObserver = NSNotificationCenter.DefaultCenter.AddObserver(UIDevice.OrientationDidChangeNotification, OrientationChanged);
+
 			view = new PreviewView(videoPreviewLayer);
 
 			return view;
+		}
+
+        private void OrientationChanged(NSNotification notification)
+		{
+			if (view != null)
+			{
+				view.LayoutSubviews();
+			}
 		}
 
 		public void Connect()
